@@ -1,6 +1,7 @@
 export function $(selector) {
   const self = {
     element: document.querySelector(selector),
+    value: document.querySelector(selector).value,
     html: () => self.element,
     on: (event, callback) => {
       self.element.addEventListener(event, callback);
@@ -31,8 +32,43 @@ export function $(selector) {
     },
     removeChilds: () => {
       self.element.innerHTML = "";
+    },
+    bind: (val) => {
+      let _val = val;
+      const setVal = (val) => {
+        _val = val;
+        if (Array.isArray(val)) {
+          self.element.innerHTML = '';
+          val.forEach(element => {
+            self.element.innerHTML += element;
+          });
+        }
+        else {
+          self.element.innerHTML = val;
+        }
+      }
+      const getVal = () => _val;
+
+      setVal(val);
+
+      return [getVal, setVal];
     }
   }
 
   return self;
+}
+
+export function useState (val, callback = null) {
+  let _val = val;
+  const setVal = (val) => {
+    if ( callback != null ) {
+      callback;
+    }
+    _val = val;
+  }
+  const getVal = () => _val;
+
+  setVal(val);
+
+  return [getVal, setVal];
 }

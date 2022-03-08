@@ -1,24 +1,15 @@
-import { $ } from "./jsLib.js"
+import { $, useState } from "./jsLib.js"
 
-
-let count = (localStorage.getItem("count") || 0);
-const display = $('#display');
-display.changeChild(count);
+const [count, setCount] = $('#display').bind(0);
 
 $('#countup').on('click', () => {
-  count++;
-  display.changeChild(count);
-  localStorage.setItem("count", count);
+  setCount(count() + 1);
 });
 
 $('#countdown').on('click', () => {
-  count--;
-  display.changeChild(count);
-  localStorage.setItem("count", count);
+  setCount(count() - 1);
 });
 
 $('#resetcount').on('click', () => {
-  count = 0;
-  localStorage.removeItem("count");
-  display.changeChild(count);
-})
+  setCount(0);
+});

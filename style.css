@@ -11,6 +11,17 @@ h1 {
   text-align: center;
 }
 
+section {
+  border-block-end: 1px solid black;
+  padding-block: 2rem;
+  position: relative;
+  width: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .counter {
   position: relative;
   width: 100;
@@ -40,6 +51,32 @@ h1 {
   background-color: #184fba; 
 }
 
+.todobtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #18ba32;
+}
+.todobtn:hover, .todobtn:focus-visible {
+  background-color: #139628;
+}
+
 #resetcount {
   grid-column: 1 / span 2;
+}
+
+.buttons2 {
+  margin-block-end: .5rem;
+}
+
+#todo {
+  margin-block: .75rem;
+  width: 25ch;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 1rem;
+  padding-block: .5rem;
+  border-radius: .5rem;
+
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
 }

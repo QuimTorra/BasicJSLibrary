@@ -7,19 +7,30 @@
   <title>Library Testing</title>
   <link rel="stylesheet" href="style.css">
 
-  <!-- <script src="library.js" charset="utf-8" defer></script> -->
+  <!-- <script src="jsLib.js" charset="utf-8" defer></script> -->
   <script src="main.js" charset="utf-8" type="module" defer></script>
 
 </head>
 <body>
-  <h1>My JS Library</h1>
-  <div class="counter">
+  <section class="title">
+    <h1>My JS Library</h1>
+  </section>
+  <section class="counter">
+    <h2>Counter</h2>
     <h3 class="display" id="display"></h3>
     <div class="buttons">
       <button class="btn" id="countup">Add</button>
       <button class="btn" id="countdown">Sub</button>
       <button class="btn" id="resetcount">Reset</button>
     </div>
-  </div>
+  </section>
+  <section class="todolist">
+    <div class="buttons2">
+      <input type="text" name="todoname" id="todoinput">
+      <button class="btn" id="addtodo">Add ToDo</button>
+      <button class="btn" id="clearlist">Clear All</button>
+    </div>
+    <div class="todoDisplay" id="todoDisplay"></div>
+  </section>
 </body>
 </html>
