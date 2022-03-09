@@ -7,13 +7,14 @@
 }
 
 h1 {
+  font-size: 2.5rem;
   margin-inline: auto;
   text-align: center;
 }
 
 section {
   border-block-end: 1px solid black;
-  padding-block: 2rem;
+  padding-block: 1.5rem;
   position: relative;
   width: 100;
   display: flex;
@@ -69,7 +70,7 @@ section {
   margin-block-end: .5rem;
 }
 
-#todo {
+.todo {
   margin-block: .75rem;
   width: 25ch;
   display: flex;
@@ -79,4 +80,15 @@ section {
   border-radius: .5rem;
 
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.todo.complete {
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0px 10px rgba(0, 0, 0, 0.3);
+}
+.todo.complete > .todobtn {
+  background-color: #af504c;
+}
+.todo.complete > p {
+  text-decoration: line-through;
 }

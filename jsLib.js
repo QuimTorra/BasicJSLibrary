@@ -25,7 +25,7 @@ export function $(selector) {
       self.element.classList.remove(_class);
     },
     addChild: (child) => {
-      self.element.innerHTML += child;
+      self.element.insertAdjacentHTML('beforeend', child);
     },
     changeChild: (child) => {
       self.element.innerHTML = child;
@@ -58,12 +58,9 @@ export function $(selector) {
   return self;
 }
 
-export function useState (val, callback = null) {
+export function useState (val) {
   let _val = val;
   const setVal = (val) => {
-    if ( callback != null ) {
-      callback;
-    }
     _val = val;
   }
   const getVal = () => _val;
